@@ -11,6 +11,7 @@ logisticregression_path = os.path.join(base_path, './Built_model/logisticregress
 randomforest_path = os.path.join(base_path, './Built_model/randomforest_model.pkl')
 svm_path = os.path.join(base_path, './Built_model/svm_model.pkl')
 xgboost_path = os.path.join(base_path, './Built_model/xgboost_model.pkl')
+naivebayes_path = os.path.join(base_path, './Built_model/naivebayes_model.pkl')
 
 knn_model = joblib.load(knn_path)
 logisticregression_model = joblib.load(logisticregression_path)
@@ -53,6 +54,7 @@ def prediction(user_data):
     randomforest_pre = str(le.inverse_transform(randomforest_model.predict(df_cur))[0])
     svm_pre = str(le.inverse_transform(svm_model.predict(df_cur))[0])
     xgboost_pre = str(le.inverse_transform(xgboost_model.predict(df_cur))[0])
+    naivebayes_pre = str(le.inverse_transform(naivebayes_model.predict(df_cur))[0])
 
     # Kết luận bằng cách dựa vào các kết luận của 5 mô hình và trọng số của chúng
     find_result[knn_pre] += 50
@@ -60,6 +62,7 @@ def prediction(user_data):
     find_result[randomforest_pre] += 90
     find_result[svm_pre] += 75
     find_result[xgboost_pre] += 90
+    find_result[naivebayes_pre] += 85
 
     result = max(find_result, key=find_result.get)
     return result
