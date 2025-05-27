@@ -18,6 +18,7 @@ logisticregression_model = joblib.load(logisticregression_path)
 randomforest_model = joblib.load(randomforest_path)
 svm_model = joblib.load(svm_path)
 xgboost_model = joblib.load(xgboost_path)
+naivebayes_model = joblib.load(naivebayes_path)
 
 data_path = os.path.join(base_path, '../Data/diabetes_dataset.csv')
 
@@ -56,7 +57,7 @@ def prediction(user_data):
     xgboost_pre = str(le.inverse_transform(xgboost_model.predict(df_cur))[0])
     naivebayes_pre = str(le.inverse_transform(naivebayes_model.predict(df_cur))[0])
 
-    # Kết luận bằng cách dựa vào các kết luận của 5 mô hình và trọng số của chúng
+    # Kết luận bằng cách dựa vào các kết luận của các mô hình và trọng số của chúng
     find_result[knn_pre] += 50
     find_result[logisticregression_pre] += 75
     find_result[randomforest_pre] += 90
