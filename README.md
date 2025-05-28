@@ -1,7 +1,7 @@
 # Diabetes-Assessment-and-Prediction-
 Define that whether the patient has diabetes or not.
 
-This project use 5 models: K Nearest Neighbors, Suport Vector Machine, Random Forest, Logistic Regression, XGBoost.
+This project use 6 models: K Nearest Neighbors, Suport Vector Machine, Random Forest, Logistic Regression, XGBoost, Naive Bayes.
 
 To deploy the project, you have to clone this to your local
 
