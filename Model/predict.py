@@ -58,7 +58,7 @@ def prediction(user_data):
     naivebayes_pre = str(le.inverse_transform(naivebayes_model.predict(df_cur))[0])
 
     # Kết luận bằng cách dựa vào các kết luận của các mô hình và trọng số của chúng
-    find_result[knn_pre] += 50
+    find_result[knn_pre] += 65
     find_result[logisticregression_pre] += 75
     find_result[randomforest_pre] += 90
     find_result[svm_pre] += 75
